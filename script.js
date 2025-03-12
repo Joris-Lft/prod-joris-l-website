@@ -146,8 +146,8 @@ const skills = [
   { name: "React Native", source: "https://reactnative.dev/" },
   { name: "React", source: "https://reactjs.org/" },
   {
-    name: "Redux",
-    source: "https://redux.js.org/",
+    name: "Context API",
+    source: "https://fr.react.dev/reference/react/createContext",
   },
   {
     name: "NextJS",
@@ -168,7 +168,8 @@ const skills = [
   },
   { name: "Git", source: "https://git-scm.com/" },
   { name: "CI/CD", source: "https://docs.gitlab.com/ee/ci/" },
-  { name: "Jest", source: "https://jestjs.io/" },
+  { name: "Vitest", source: "https://vitest.dev/" },
+  { name: "..." },
 ];
 
 const contact = {
@@ -187,7 +188,7 @@ if (projects.length > 0) {
               <p><strong>Stack:</strong> ${project.stack.join(", ")}</p>
               ${
                 project.livePreview
-                  ? `<a href="${project.livePreview}" target="_blank">See it live !</a>`
+                  ? `<a href="${project.livePreview}" target="_blank" class="button">See it live !</a>`
                   : ""
               }
             </div>
@@ -226,19 +227,15 @@ if (projects.length > 0) {
 const skillsSection = document.getElementById("skills-list");
 if (skills.length > 0) {
   skills.forEach((skill) => {
-    // Determine icon based on skill name (you'll need to adjust this)
-    let iconClass = "fas fa-code"; // Default icon
-    if (skill.name === "HTML") iconClass = "fab fa-html5";
-    if (skill.name === "CSS") iconClass = "fab fa-css3-alt";
-    if (skill.name === "JavaScript") iconClass = "fab fa-js";
-    if (skill.name === "React") iconClass = "fab fa-react";
-    if (skill.name === "Node.JS") iconClass = "fab fa-node-js";
-    //... add more icons as needed
-
-    skillsSection.innerHTML += `
+    skillsSection.innerHTML += skill.source
+      ? `
       <li>
-        <i class="${iconClass}"></i>
         <a href="${skill.source}" target="_blank">${skill.name}</a>
+      </li>
+    `
+      : `
+      <li>
+        <span>${skill.name}</span>
       </li>
     `;
   });

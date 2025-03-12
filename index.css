@@ -99,29 +99,36 @@ section a:hover {
   color: var(--white-color);
 }
 
+/* === ABOUT === */
+#about div {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
 /* === SKILLS === */
 #skills-list {
   list-style: none;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  /* display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1rem;
   padding: 0;
+  place-items: center;
 }
 
 #skills-list li {
   background-color: var(--secondary-color);
   padding: 1rem;
   border-radius: 5px;
+  min-width: 150px;
   text-align: center;
 }
 
-#skills-list i {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-  color: #ffcc00;
-}
-
-#skills-list a {
+#skills-list a,
+#skills-list span {
   color: #ffcc00;
   text-decoration: none;
 }
@@ -165,7 +172,13 @@ section a:hover {
   line-height: 1.6;
 }
 
-#projects-grid a {
+/* === CONTACT SECTION === */
+#contact {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.button {
   display: inline-block;
   background: var(--primary-color);
   color: var(--bg-color);
@@ -176,24 +189,9 @@ section a:hover {
   transition: background-color 0.3s ease;
 }
 
-#projects-grid a:hover {
+.button:hover {
   background: var(--white-color);
   color: var(--bg-color);
-}
-
-/* === CONTACT SECTION === */
-#contact {
-  text-align: center;
-  padding: 50px 20px;
-}
-
-#contact a {
-  font-size: 1.2rem;
-  color: var(--primary-color);
-}
-
-#contact a:hover {
-  color: var(--white-color);
 }
 
 /* === RESPONSIVE DESIGN === */
