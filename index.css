@@ -109,8 +109,6 @@ section a:hover {
 /* === SKILLS === */
 #skills-list {
   list-style: none;
-  /* display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -207,9 +205,5 @@ section a:hover {
 
   section {
     padding: 30px 15px;
-  }
-
-  #projects-grid {
-    grid-template-columns: 1fr;
   }
 }

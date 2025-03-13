@@ -176,6 +176,46 @@ const contact = {
   email: "contact@joris-lefait.com",
 };
 
+// Masonry effect
+function applyMasonry() {
+  const grid = document.querySelector("#projects-grid");
+  const cards = document.querySelectorAll("#projects-grid article");
+  let columnCount;
+
+  // Déterminer le nombre de colonnes en fonction de la largeur de l'écran
+  if (window.innerWidth < 768) {
+    // Mobile
+    columnCount = 1;
+  } else if (window.innerWidth < 1024) {
+    // Tablette
+    columnCount = 2;
+  } else {
+    // Desktop
+    columnCount = 3;
+  }
+
+  const columnWidth = grid.offsetWidth / columnCount;
+  const columnHeights = new Array(columnCount).fill(0);
+
+  cards.forEach((card) => {
+    let shortestColumnIndex = 0;
+    for (let i = 1; i < columnCount; i++) {
+      if (columnHeights[i] < columnHeights[shortestColumnIndex]) {
+        shortestColumnIndex = i;
+      }
+    }
+
+    card.style.position = "absolute";
+    card.style.left = shortestColumnIndex * columnWidth + "px";
+    card.style.top = columnHeights[shortestColumnIndex] + 30 + "px";
+
+    columnHeights[shortestColumnIndex] += card.offsetHeight + 15;
+  });
+
+  const maxHeight = Math.max(...columnHeights);
+  grid.style.height = maxHeight + "px";
+}
+
 // display projects section
 const projectsSection = document.getElementById("projects-grid");
 if (projects.length > 0) {
@@ -196,32 +236,11 @@ if (projects.length > 0) {
         `;
   });
 
-  // Agencement de type "masonry" en JavaScript classique
-  const grid = document.querySelector("#projects-grid");
-  const cards = document.querySelectorAll("#projects-grid article");
-  const columnCount = 3; // Nombre de colonnes
-  const columnWidth = grid.offsetWidth / columnCount;
-  const columnHeights = new Array(columnCount).fill(0);
-
-  cards.forEach((card) => {
-    let shortestColumnIndex = 0;
-    for (let i = 1; i < columnCount; i++) {
-      if (columnHeights[i] < columnHeights[shortestColumnIndex]) {
-        shortestColumnIndex = i;
-      }
-    }
-
-    card.style.position = "absolute";
-    card.style.left = shortestColumnIndex * columnWidth + "px";
-    card.style.top = columnHeights[shortestColumnIndex] + 30 + "px";
-
-    columnHeights[shortestColumnIndex] += card.offsetHeight + 15; // Ajoute la hauteur de la carte + un espacement
-  });
-
-  // Ajuste la hauteur du conteneur
-  const maxHeight = Math.max(...columnHeights);
-  grid.style.height = maxHeight + "px";
+  applyMasonry();
 }
+
+// Responsive for Masonry effect
+window.addEventListener("resize", applyMasonry);
 
 // display skills section
 const skillsSection = document.getElementById("skills-list");
