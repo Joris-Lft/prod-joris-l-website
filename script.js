@@ -28,14 +28,14 @@ const projects = [
   {
     name: "TheHive",
     description:
-      "Maintain and develop new features for the product: more informations about it with the link below.",
+      "Maintain and develop new features for a Cyber Security Case Management Platform: more informations about the project with the link below.",
     stack: ["React", "Antd Design", "SCSS", "Storybook", "Vitest"],
     livePreview: "https://thehive-project.org",
   },
   {
     name: "La Banque Postale",
     description:
-      "Full rework of customer application, UX reflections on prototypes, creation of POCs, training of developers at the client, integration of development cycles in agile mode (SCRUM)",
+      "Full rework of customer application, UX reflections on prototypes, creation of POCs, training developers at the client, integration of development cycles in agile mode (SCRUM)",
     stack: ["React Native", "Gitlab", "NativeBase", "JIRA"],
   },
   {

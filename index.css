@@ -5,6 +5,7 @@
   --primary-color: #bb86fc;
   --secondary-color: #1e1e1e;
   --white-color: #ffffff;
+  --yellow-color: #ffcc00;
 }
 
 * {
@@ -31,20 +32,21 @@ nav {
   text-align: center;
   backdrop-filter: blur(10px);
   z-index: 1000;
-  display: flex; /* Ajout pour aligner le hamburger et le menu */
-  justify-content: space-between; /* Ajout pour les espacer */
-  align-items: center; /* Ajout pour les centrer verticalement */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 nav ul {
   list-style: none;
   display: flex;
   justify-content: center;
+  width: 100%;
   gap: 20px;
 }
 
 nav a {
-  color: var(--primary-color);
+  color: var(--yellow-color);
   text-decoration: none;
   font-size: 1.2rem;
   padding: 10px 15px;
@@ -74,23 +76,38 @@ nav a:hover {
 }
 
 /* === HEADER === */
-header {
-  text-align: center;
-  padding: 100px 20px;
-  background: url("https://source.unsplash.com/1600x900/?technology,dark")
-    no-repeat center;
-  background-size: cover;
-  height: 300px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+header.banner {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
 }
 
-header h1 {
-  font-size: 2.5rem;
-  background: rgba(0, 0, 0, 0.7);
-  padding: 20px;
-  border-radius: 10px;
+header.banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://images.unsplash.com/photo-1504164996022-09080787b6b3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.6); /* Darken image */
+}
+
+.banner-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: var(--white-color);
+}
+
+.banner-content h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
 }
 
 /* === SECTIONS === */
@@ -122,8 +139,27 @@ section a:hover {
 }
 
 /* === ABOUT === */
-#about div {
-  margin-top: 1rem;
+.about-container {
+  display: flex;
+  align-items: center;
+}
+
+.avatar-container {
+  margin-right: 30px;
+}
+
+.avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-text div {
   display: flex;
   justify-content: center;
 }
@@ -149,7 +185,7 @@ section a:hover {
 
 #skills-list a,
 #skills-list span {
-  color: #ffcc00;
+  color: var(--yellow-color);
   text-decoration: none;
 }
 
@@ -216,6 +252,7 @@ section a:hover {
 
 /* === RESPONSIVE DESIGN === */
 @media (max-width: 768px) {
+  /* === NAVIGATION === */
   nav {
     padding: 15px 10px;
   }
@@ -255,6 +292,32 @@ section a:hover {
 
   .nav-menu li {
     margin: 15px 0;
+  }
+
+  /* === BANNER === */
+  header.banner {
+    margin-top: 78px;
+    height: 300px;
+  }
+
+  .banner-content h1 {
+    font-size: 2.5rem;
+  }
+
+  /* === ABOUT SECTION === */
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .avatar-container {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .avatar {
+    width: 120px;
+    height: 120px;
   }
 
   section {
