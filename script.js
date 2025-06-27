@@ -12,18 +12,6 @@ document.querySelectorAll("nav a").forEach((anchor) => {
   });
 });
 
-// content
-const about = {
-  name: "Joris Lefait",
-  role: "FullStack developer",
-  description:
-    "I'm Joris. I started my career in programming in 2019 after some years working in chemistry. I was first a front-end developer and then I started learning back-end development with Node.js, Express.js and PostgreSQL. I also play with Raspberry Pi and am learning basics of cybersecurity.",
-  social: {
-    linkedin: "https://www.linkedin.com/in/joris-lefait/",
-    github: "https://github.com/Joris-Lft",
-  },
-};
-
 const projects = [
   {
     name: "TheHive",
@@ -72,12 +60,12 @@ const projects = [
       "Mobile application entirely dedicated to veterinary auxiliaries. Addition of new features, code update, performance optimization. Implementation of a points system per user according to the actions performed, addition of a duel functionality between users.",
     stack: ["React Native", "Node.JS", "PostgreSQL", "Gitlab", "Heroku"],
   },
-  {
-    name: "POC Shopify webhooks - headless commerce",
-    description:
-      "Catch part of Shopify requests via webhooks on a webservice in Node.js and Prisma in order to have a database of products, categories and customers. The purpose is to have more freedom than with classic Shopify APIs in a context of Headless project creation on the front-end.",
-    stack: ["Node.JS", "Gitlab"],
-  },
+  // {
+  //   name: "POC Shopify webhooks - headless commerce",
+  //   description:
+  //     "Catch part of Shopify requests via webhooks on a webservice in Node.js and Prisma in order to have a database of products, categories and customers. The purpose is to have more freedom than with classic Shopify APIs in a context of Headless project creation on the front-end.",
+  //   stack: ["Node.JS", "Gitlab"],
+  // },
   {
     name: "Unsold",
     description:
