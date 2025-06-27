@@ -166,6 +166,10 @@ const skills = [
     name: "StyledComponents",
     source: "https://styled-components.com/",
   },
+  {
+    name: "n8n",
+    source: "https://n8n.io/",
+  },
   { name: "Git", source: "https://git-scm.com/" },
   { name: "CI/CD", source: "https://docs.gitlab.com/ee/ci/" },
   { name: "Vitest", source: "https://vitest.dev/" },
