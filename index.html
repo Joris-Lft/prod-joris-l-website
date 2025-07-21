@@ -3,141 +3,316 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Joris Lefait - Web Developer</title>
-    <link rel="stylesheet" href="index.css" />
+    <title>Joris Lefait - Web Developer & Automation Expert</title>
+    <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     />
-    <link rel="icon" type="image/png" href="assets/JL-white.svg" />
   </head>
   <body>
-    <nav>
-      <img src="assets/JL-white.svg" alt="Logo">
-
-      <div class="hamburger">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-      </div>
-      <ul class="nav-menu">
-        <li><a href="#">Home</a></li>
-        <li><a href="#about">About me</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-
-    <header class="banner">
-      <div class="banner-content"/>
+    <header>
+      <nav>
+        <div class="logo">
+          <a href="#hero"
+            ><img src="assets/JL-white.svg" alt="Joris Lefait Logo"
+          /></a>
+        </div>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
     </header>
 
     <main>
-      <section id="about">
-        <h2>About me</h2>
-        <div class="about-container">
-          <div class="avatar-container">
-            <img
-              src="https://images.unsplash.com/photo-1504164996022-09080787b6b3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt="Avatar de Joris"
-              class="avatar"
-            />
-          </div>
-          <div class="about-text">
-            <p>
-              I'm Joris, a passionate Full Stack Web Developer with a background
-              in chemistry and a proven track record since 2019. I specialize in
-              building modern, high-performance websites and scalable back-end
-              solutions using JavaScript, Node.js, Express.js, and PostgreSQL.</br>
-              My expertise extends to API integration, automation, and
-              cybersecurity fundamentals. I thrive on solving complex problems,
-              delivering user-centric digital experiences, and continuously
-              learning new technologies to help businesses grow online.
-            </p>
-          </div>
+      <section id="hero">
+        <div class="hero-content">
+          <h1>Joris Lefait</h1>
+          <p>Freelance Web Developer & Automation Specialist</p>
+          <a href="#contact" class="cta-button">Get in Touch</a>
         </div>
-        <div>
+      </section>
+
+      <section id="about">
+        <h2>About Me</h2>
+        <div class="about-content">
+          <img
+            src="assets/JL-white.svg"
+            alt="Joris Lefait Avatar"
+            class="avatar"
+          />
           <p>
-            <a
-              href="https://www.malt.fr/profile/jorislefait"
-              target="_blank"
-              class="button"
-              >Malt</a
-            >
-            <a
-              href="https://www.linkedin.com/in/joris-lefait/"
-              target="_blank"
-              class="button"
-              >LinkedIn</a
-            >
-            <!-- <a
-              href="https://github.com/Joris-Lft"
-              target="_blank"
-              class="button"
-              >GitHub</a
-            > -->
+            I build beautiful, functional websites and create powerful
+            automations to streamline your business processes. With a passion
+            for clean code and efficient solutions, I help my clients achieve
+            their goals and grow their online presence.
           </p>
         </div>
       </section>
 
       <section id="services">
         <h2>Services</h2>
-        <ul id="services-list">
-          <li class="service-card">
-            <img src="assets/JL-white.svg" alt="Web Development" />
+        <div class="service-container">
+          <div class="service-box">
+            <i class="fas fa-laptop-code service-icon"></i>
             <h3>Web Development</h3>
             <p>
-              Modern, responsive websites built for performance and usability.
+              From simple landing pages to complex web applications, I create
+              responsive, user-friendly websites that look great on all devices.
             </p>
-          </li>
-          <li class="service-card">
-            <img src="assets/JL-white.svg" alt="API integration" />
-            <h3>API integration</h3>
-            <p>Seamless integration with third-party services and APIs.</p>
-          </li>
-          <li class="service-card">
-            <img src="assets/JL-white.svg" alt="Codebase modernization" />
-            <h3>Codebase modernization</h3>
-            <p>
-              Refactoring and updating legacy codebases for improved performance
-              and maintainability.
-            </p>
-          </li>
-          <li class="service-card">
-            <img src="assets/JL-white.svg" alt="Automations" />
+          </div>
+          <div class="service-box">
+            <i class="fas fa-robot service-icon"></i>
             <h3>Automations</h3>
             <p>
-              Streamlining processes and workflows through automation with n8n.
+              I design and implement custom automations to handle repetitive
+              tasks, saving you time and reducing errors. Let's make your
+              workflow more efficient.
             </p>
-          </li>
-        </ul>
+          </div>
+          <div class="service-box">
+            <i class="fas fa-plug service-icon"></i>
+            <h3>API Integration</h3>
+            <p>
+              Seamlessly connect your applications and services through robust
+              API integrations, enabling data flow and enhanced functionality.
+            </p>
+          </div>
+          <div class="service-box">
+            <i class="fas fa-sync-alt service-icon"></i>
+            <h3>Codebase Modernization</h3>
+            <p>
+              Transform legacy code into modern, maintainable, and scalable
+              solutions, improving performance and developer experience.
+            </p>
+          </div>
+        </div>
       </section>
 
       <section id="skills">
         <h2>Skills</h2>
-        <ul id="skills-list"></ul>
+        <div class="skills-container">
+          <div class="skill-box">HTML</div>
+          <div class="skill-box">CSS</div>
+          <div class="skill-box">JavaScript</div>
+          <div class="skill-box">TypeScript</div>
+          <div class="skill-box">React Native</div>
+          <div class="skill-box">React</div>
+          <div class="skill-box">Context API</div>
+          <div class="skill-box">NextJS</div>
+          <div class="skill-box">Storybook</div>
+          <div class="skill-box">SASS</div>
+          <div class="skill-box">MaterialUI</div>
+          <div class="skill-box">StyledComponents</div>
+          <div class="skill-box">n8n</div>
+          <div class="skill-box">Git</div>
+          <div class="skill-box">CI/CD</div>
+          <div class="skill-box">Vitest</div>
+          <div class="skill-box">...</div>
+        </div>
       </section>
 
-      <section id="projects">
-        <h2>Projects</h2>
-        <div id="projects-grid"></div>
+      <section id="portfolio">
+        <h2>Portfolio</h2>
+        <div class="portfolio-grid">
+          <div class="portfolio-item">
+            <h3>TheHive</h3>
+            <p>
+              Maintain and develop new features for a Cyber Security Case
+              Management Platform: more informations about the project with the
+              link below.
+            </p>
+            <div class="stack">
+              <span>React</span><span>Antd Design</span><span>SCSS</span
+              ><span>Storybook</span><span>Vitest</span>
+            </div>
+            <a
+              href="https://thehive-project.org"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="live-preview"
+              >Live Preview</a
+            >
+          </div>
+          <div class="portfolio-item">
+            <h3>La Banque Postale</h3>
+            <p>
+              Full rework of customer application, UX reflections on prototypes,
+              creation of POCs, training developers at the client, integration
+              of development cycles in agile mode (SCRUM)
+            </p>
+            <div class="stack">
+              <span>React Native</span><span>Gitlab</span><span>NativeBase</span
+              ><span>JIRA</span>
+            </div>
+          </div>
+          <div class="portfolio-item">
+            <h3>Chatbot Improvement</h3>
+            <p>
+              Create an HMI which allow data analyst to rework on some chatbot
+              responses to make it more efficient. In pair with a data
+              scientist, remotly.
+            </p>
+            <div class="stack">
+              <span>React</span><span>Python</span><span>Uvicorn</span
+              ><span>FastAPI</span>
+            </div>
+          </div>
+          <div class="portfolio-item">
+            <h3>SNCF</h3>
+            <p>
+              Rework of the front-end of all ter.sncf.fr websites, in React +
+              Next.js with accessibility constraints, and regions specifiation
+              themes. In a team of 10 peoples sometimes in customer's office,
+              most remotly.
+            </p>
+            <div class="stack">
+              <span>TypeScript</span><span>React</span><span>NextJS</span
+              ><span>MaterialUI</span><span>Storybook</span><span>JEST</span
+              ><span>Gitlab</span><span>JIRA</span>
+            </div>
+            <a
+              href="https://m.ter.sncf.com/hauts-de-france"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="live-preview"
+              >Live Preview</a
+            >
+          </div>
+          <div class="portfolio-item">
+            <h3>Cevoo</h3>
+            <p>
+              Mobile application entirely dedicated to veterinary auxiliaries.
+              Addition of new features, code update, performance optimization.
+              Implementation of a points system per user according to the
+              actions performed, addition of a duel functionality between users.
+            </p>
+            <div class="stack">
+              <span>React Native</span><span>Node.JS</span
+              ><span>PostgreSQL</span><span>Gitlab</span><span>Heroku</span>
+            </div>
+          </div>
+          <div class="portfolio-item">
+            <h3>Unsold</h3>
+            <p>
+              Update back-end and API's. Migration of some PostgreSQL requests
+              to Prisma requests for performance improvement.
+            </p>
+            <div class="stack">
+              <span>Node.JS</span><span>Express</span><span>Prisma</span
+              ><span>PostgreSQL</span><span>Gitlab</span><span>Heroku</span>
+            </div>
+          </div>
+          <div class="portfolio-item">
+            <h3>SuperCollab</h3>
+            <p>
+              As part of the creation of a Start-Up, creation of a Web App
+              allowing the connection between different law firms / notaries.
+            </p>
+            <div class="stack"><span>React</span><span>Docker</span></div>
+          </div>
+          <div class="portfolio-item">
+            <h3>NewDeal</h3>
+            <p>
+              During a partnership between NewDeal and La Mobilery, realization
+              of a mobile application in React Native of an HR management
+              solution (establishment of pay slips, leave requests ...).
+            </p>
+            <div class="stack">
+              <span>React Native</span><span>Typescript</span>
+            </div>
+          </div>
+          <div class="portfolio-item">
+            <h3>Experiencis</h3>
+            <p>
+              Development of a platform aimed at connecting buyers and
+              individuals in order to carry out remote visits to goods (real
+              estate, automobile, high-tech). In tandem with a technical lead,
+              reinforcement on the Front development part of a Web App in
+              ReactJS.
+            </p>
+            <div class="stack">
+              <span>React</span><span>Material Design</span>
+            </div>
+          </div>
+          <div class="portfolio-item">
+            <h3>RapidFlyer</h3>
+            <p>
+              Redesign of the front-end for the V4 of the Website in Next.js in
+              headless commerce. In a team of 10 people directly at the
+              customer. Development of screens and deployment of revenue phases
+              in direct contact with the customer.
+            </p>
+            <div class="stack">
+              <span>React</span><span>NextJS</span><span>Azure</span
+              ><span>Redux</span><span>Redux Saga</span
+              ><span>StyledComponent</span>
+            </div>
+            <a
+              href="https://www.rapid-flyer.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="live-preview"
+              >Live Preview</a
+            >
+          </div>
+          <div class="portfolio-item">
+            <h3>Leroy Merlin</h3>
+            <p>
+              Intervention as a techOps. Management of the fleet of terminals
+              deployed in France in stores and warehouses via an MDM. Deployment
+              of updates and fixes to terminals. Implementation of analytics
+              feedback to monitor the status of deployments and terminals.
+              Development of a monitoring platform for the solutions deployed by
+              the squad. Participation in the Google Cloud Challenge for 3 days
+              in partnership with ADEO, project to port a legacy application to
+              a cloud infrastructure. Benchmark of the various MDMs on the
+              market, consultation with terminal manufacturers for fleet
+              renewal.
+            </p>
+            <div class="stack">
+              <span>Javascript</span><span>Python</span><span>Shell</span
+              ><span>Docker</span><span>Kubernetes</span><span>GCP</span
+              ><span>Openshift</span>
+            </div>
+          </div>
+        </div>
       </section>
 
       <section id="contact">
-        <h2>Contact</h2>
+        <h2>Contact Me</h2>
         <p>
-          <a href="mailto:contact@joris-lefait.com" class="button"
-            >Let's talk about your project !</a
-          >
+          I'm currently available for freelance work. If you have a project in
+          mind or just want to say hello, please fill out the form below and I
+          will get back to you as soon as possible.
         </p>
+        <form
+          id="contact-form"
+          action="https://formspree.io/f/mrblerek"
+          method="POST"
+        >
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Your Email" required />
+          <textarea
+            name="message"
+            placeholder="Your Message"
+            required
+          ></textarea>
+          <button type="submit">Send Message</button>
+        </form>
       </section>
-      <footer>
-        <p>&copy; 2025 Joris Lefait. All rights reserved.</p>
-        <img src="assets/JL-white.svg" alt="Logo">
-      </footer>
     </main>
+
+    <footer>
+      <p>&copy; 2025 Joris Lefait. All rights reserved.</p>
+    </footer>
 
     <script src="script.js"></script>
   </body>
