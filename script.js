@@ -1,75 +1,103 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Smooth scrolling for navigation links
-    const scrollLinks = document.querySelectorAll('a[href^="#"]');
-    scrollLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
-            if (targetSection) {
-                window.scrollTo({
-                    top: targetSection.offsetTop - 70, // Adjusted for fixed header
-                    behavior: 'smooth'
-                });
-            }
-        });
+document.addEventListener("DOMContentLoaded", () => {
+  const HEADER_OFFSET = 70; // Height of the fixed header
+
+  // Function for smooth scrolling
+  const setupSmoothScrolling = () => {
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute("href");
+        const targetElement = document.querySelector(targetId);
+
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - HEADER_OFFSET,
+            behavior: "smooth",
+          });
+        }
+      });
     });
+  };
 
-    // Active link highlighting on scroll
-    const sections = document.querySelectorAll('section');
-    const navLi = document.querySelectorAll('nav ul li a');
+  // Function for active link highlighting on scroll
+  const setupActiveLinkHighlighting = () => {
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll("nav ul li a");
 
-    window.addEventListener('scroll', () => {
-        let current = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            if (pageYOffset >= sectionTop - 80) {
-                current = section.getAttribute('id');
-            }
-        });
+    const highlightActiveLink = () => {
+      let currentActiveSectionId = "";
 
-        navLi.forEach(a => {
-            a.classList.remove('active');
-            if (a.getAttribute('href').substring(1) === current) {
-                a.classList.add('active');
-            }
-        });
-    });
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        // Adjust scroll position by header offset for accurate highlighting
+        if (window.pageYOffset >= sectionTop - HEADER_OFFSET - 10) {
+          // Added a small buffer
+          currentActiveSectionId = section.getAttribute("id");
+        }
+      });
 
-    // Contact Form Submission with Formspree
-    const contactForm = document.getElementById('contact-form');
-    const formStatus = document.createElement('p');
+      navLinks.forEach((link) => {
+        link.classList.remove("active");
+        if (link.getAttribute("href").substring(1) === currentActiveSectionId) {
+          link.classList.add("active");
+        }
+      });
+    };
+
+    window.addEventListener("scroll", highlightActiveLink);
+    highlightActiveLink(); // Call on load to set initial active link
+  };
+
+  // Function for contact form submission
+  const setupContactForm = () => {
+    const contactForm = document.getElementById("contact-form");
+    if (!contactForm) return;
+
+    const formStatus = document.createElement("p");
     contactForm.appendChild(formStatus);
 
-    async function handleSubmit(event) {
-        event.preventDefault();
-        const data = new FormData(event.target);
-        fetch(event.target.action, {
-            method: contactForm.method,
-            body: data,
-            headers: {
-                'Accept': 'application/json'
-            }
-        }).then(response => {
-            if (response.ok) {
-                formStatus.textContent = 'Thanks for your submission!';
-                formStatus.style.color = 'green';
-                contactForm.reset();
-            } else {
-                response.json().then(data => {
-                    if (Object.hasOwn(data, 'errors')) {
-                        formStatus.textContent = data['errors'].map(error => error['message']).join(', ');
-                    } else {
-                        formStatus.textContent = 'Oops! There was a problem submitting your form';
-                    }
-                    formStatus.style.color = 'red';
-                });
-            }
-        }).catch(error => {
-            formStatus.textContent = 'Oops! There was a problem submitting your form';
-            formStatus.style.color = 'red';
-        });
-    }
+    const handleSubmit = async (event) => {
+      event.preventDefault();
+      const data = new FormData(event.target);
 
-    contactForm.addEventListener('submit', handleSubmit);
+      try {
+        const response = await fetch(event.target.action, {
+          method: contactForm.method,
+          body: data,
+          headers: {
+            Accept: "application/json",
+          },
+        });
+
+        if (response.ok) {
+          formStatus.textContent = "Thanks for your submission!";
+          formStatus.style.color = "green";
+          contactForm.reset();
+        } else {
+          const errorData = await response.json();
+          if (errorData && errorData.errors) {
+            formStatus.textContent = errorData.errors
+              .map((error) => error.message)
+              .join(", ");
+          } else {
+            formStatus.textContent =
+              "Oops! There was a problem submitting your form.";
+          }
+          formStatus.style.color = "red";
+        }
+      } catch (error) {
+        formStatus.textContent =
+          "Oops! There was a problem submitting your form.";
+        formStatus.style.color = "red";
+        console.error("Form submission error:", error);
+      }
+    };
+
+    contactForm.addEventListener("submit", handleSubmit);
+  };
+
+  // Initialize all functionalities
+  setupSmoothScrolling();
+  setupActiveLinkHighlighting();
+  setupContactForm();
 });
