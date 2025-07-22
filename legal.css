@@ -1,0 +1,25 @@
+/* legal.css */
+
+#legal {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.legal-content {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: var(--surface-color);
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.legal-content h3 {
+  color: var(--primary-color);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.legal-content ul {
+  list-style: disc;
+  padding-left: 2rem;
+}
