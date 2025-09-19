@@ -208,6 +208,60 @@ h2::after {
   box-shadow: 0 0 15px rgba(0, 170, 255, 0.3);
 }
 
+.about-social {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.6em 1.2em;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  background: var(--secondary-color, #222);
+  color: var(--primary-color, #fff);
+}
+
+.social-btn .fab {
+  font-size: 1.2em;
+}
+
+.social-btn.linkedin {
+  background: #0077b5;
+  color: #fff;
+}
+
+.social-btn.github {
+  background: #24292e;
+  color: #fff;
+}
+
+.social-btn.malt {
+  background: #ff5c5c;
+  color: #fff;
+}
+
+.social-btn.medium {
+  background: #191919;
+  color: #fff;
+}
+
+.social-btn:hover,
+.social-btn:focus {
+  filter: brightness(1.1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  text-decoration: none;
+}
+
 .service-container {
   display: flex;
   justify-content: center;
