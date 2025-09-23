@@ -219,6 +219,7 @@ h2::after {
 
 .about-social {
   display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
   margin-top: 1rem;
   justify-content: center;
@@ -549,7 +550,6 @@ footer {
   }
 }
 
-
 @media (max-width: 768px) {
   .hero-content h1 {
     font-size: 3rem;
@@ -570,6 +570,10 @@ footer {
   .about-content {
     flex-direction: column;
     text-align: center;
+  }
+
+  .about-social {
+    margin-top: 2rem;
   }
 
   .burger-menu {
