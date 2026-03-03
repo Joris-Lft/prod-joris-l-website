@@ -7,4 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
       navLinks.classList.toggle("active");
     });
   }
+
+  const yearEl = document.getElementById("year");
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
 });
